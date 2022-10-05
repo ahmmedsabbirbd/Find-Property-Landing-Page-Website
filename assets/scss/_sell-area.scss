@@ -1,0 +1,112 @@
+.sell-area {
+
+    &__list {
+
+        ul {
+            gap: 20px;
+            display: flex;
+
+            li {
+                cursor: pointer;
+                position: relative;
+
+                &:before {
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    width: 50%;
+                    height: 2px;
+                    content: '';
+                    position: absolute;
+                    background-color: $primary;
+                    @include transform(scaleX(0));
+                    @include transition(all .3s ease);
+                }
+
+                &.active, &:hover, &:focus {
+                    color: $primary;
+
+                    &:before {
+                        @include transform(scaleX(1));
+                    }
+                }
+            }
+        }
+    }
+
+    &__form {
+        gap: 30px;
+
+       &-wrapper {
+            box-shadow:-1px 9px 14px 0px #0000003b;
+    
+            .form-group {
+                z-index: 1;
+                position: relative;
+    
+                label {
+                    font-weight: 700;
+                    margin-bottom: 10px;
+    
+                    @media screen  and (max-width: 575px) { 
+                        margin-bottom: 5px;
+                    }
+                }
+    
+                select {
+                    display: inherit;
+                    -moz-appearance: none;
+                    -webkit-appearance: none;
+                    font-size: 14px !important;
+                    line-height: 24px !important;
+                    padding: 0 18px 0 0 !important;
+                    background-size: 15px !important;
+                    background-repeat: no-repeat !important;
+                    background-position-x: 99% !important;
+                    background-position-y: 5px !important;
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3C!--! Font Awesome Pro 6.2.0 by %40fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons  Inc. --%3E%3Cpath d='M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z'/%3E%3C/svg%3E") !important;
+                }
+            }
+    
+            i {
+                font-size: 15px;
+                line-height: 25px;
+            }
+    
+            .theme-btn {
+                background-color: $black;
+    
+                &:hover, &:focus {
+                    background-color: $primary;
+                }
+            }
+    
+            input[type="submit"] {
+                color: $white;
+                font-size: 17px;
+                font-weight: 500;
+                line-height: 26px; 
+                border: 0 !important; 
+                display: inline-block;
+                text-decoration: none;
+                background-color: $black;
+                text-transform: capitalize;
+                @include border-radius(5px);
+                padding: 15px 30px; 
+                @include transition(all .3s ease);
+    
+                @media screen and (max-width: 991px) {
+                    font-size: 15px;
+                    line-height: 23px; 
+                    padding: 10px 20px;
+                }
+    
+                &:hover, &:focus {
+                    box-shadow: none;
+                    color: $white;
+                    background-color: $primary;
+                }
+            }
+        }
+    }
+}

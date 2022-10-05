@@ -1,0 +1,125 @@
+/*** 1. Theme default css */
+body {
+  color: $black;
+  background: $white;
+  font: 400 16px/24px $pop;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+    transition: all 0.3s ease-out 0s;
+}
+
+a, .button, button {
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+    
+    li {
+        list-style: none
+    }
+}
+
+p {
+  margin-bottom: 0;
+}
+
+h1, .h1 { font-size: 60px; line-height: 74px; 
+  @media screen  and (max-width: 991px) { font-size: 50px; line-height: 60px; }
+  @media screen  and (max-width: 767px) { font-size: 42px; line-height: 52px; }
+  @media screen  and (max-width: 575px) { font-size: 36px; line-height: 46px; }
+}
+h2, .h2 { font-size: 50px; line-height: 60px; 
+  @media screen  and (max-width: 991px) { font-size: 42px; line-height: 52px; }
+  @media screen  and (max-width: 767px) { font-size: 36px; line-height: 46px; }
+  @media screen  and (max-width: 575px) { font-size: 32px; line-height: 42px; }
+}
+h3, .h3 { font-size: 42px; line-height: 52px;  
+  @media screen  and (max-width: 991px) { font-size: 36px; line-height: 46px; }
+  @media screen  and (max-width: 767px) { font-size: 30px; line-height: 40px; }
+  @media screen  and (max-width: 575px) { font-size: 28px; line-height: 38px; }
+}
+h4, .h4 { font-size: 36px; line-height: 46px; 
+  @media screen  and (max-width: 991px) { font-size: 30px; line-height: 40px; }
+  @media screen  and (max-width: 767px) { font-size: 25px; line-height: 35px; }
+}
+h5, .h5 { font-size: 24px; line-height: 34px;   
+  @media screen  and (max-width: 767px) { font-size: 22px; line-height: 32px; }
+}
+h6, .h6 { font-size: 20px; line-height: 30px; }
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    margin: 0;
+    padding: 0;
+    color: $black;
+    font-weight: 700; 
+    font-family: $pop;
+    text-transform: capitalize;
+
+    a {
+        color: inherit;
+    }
+
+    span {
+        color: $primary;
+        font-weight: 300;
+
+        &.red {
+            color: $red;
+            font-weight: 700;
+        }
+
+        &.normal {
+            color: inherit;
+        }
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px; 
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+input[type="text"]:not(.select2-input),
+input[type="number"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+input[type="password"],
+input[type="file"],
+select, textarea {
+@include appearance;
+    border: 0 !important;
+    width: 100% !important;
+    color: #BCBCBC !important;
+    box-shadow: none !important;
+    font-size: 18px !important;
+    font-weight: 400 !important;
+    box-shadow: none !important;
+    line-height: 30px !important; 
+    background: $white !important;
+    padding: 13px 19px !important;
+    @include transition(all 0.3s ease);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    @include border-radius(5px);
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    @include placeholderWithlettertraking(#BCBCBC, 17px, 26px, calculateRem(0.03), 400);
+
+    &:hover, &:focus {
+    outline: 0;
+    }
+}
+
+.dark-black { color: $dark_black !important; }

@@ -1,0 +1,145 @@
+.feature-area {
+
+    .minus {
+        margin-bottom: -30px;
+    }
+
+    .button-group {
+        gap: 25px;
+        border-bottom: 1px solid #E7E6F4;
+
+        @media screen and (max-width: 991px) { 
+            gap: 20px;
+        }
+        
+        button {
+            border: 0;
+            padding: 0;
+            color: $black;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 26px;
+            position: relative;
+            background: transparent;
+            text-transform: capitalize;
+ 
+            @media screen and (max-width: 575px) { 
+                font-size: 14px;
+                line-height: 24px;
+            }
+
+            &:before {
+                left: 0;
+                right: 0;
+                width: 100%;
+                height: 2px;
+                content: '';
+                bottom: -16px;
+                position: absolute;
+                background-color: $primary;
+                @include transform(scaleX(0));
+                @include transition(all .3s ease);
+
+                @media screen and (max-width: 767px) { 
+                    bottom: -12px;
+                }
+            }
+            
+            &:hover, &.active {
+                color: $primary;
+                
+                &::before {
+                    @include transform(scaleX(1));
+                }
+            }
+        }
+    }
+
+    &__item {
+        box-shadow: 0px 4px 9px 0px #0000003b;
+        
+        a {
+            width: 100%;
+            height: 100%;
+            display: block;
+            text-decoration: none;
+        }
+
+        .media {
+            height: 238px;
+            max-width: 100%;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            &:hover, &:focus {
+                
+                img {
+                    @include transform(scale(1.2));
+                }
+            }
+        }
+
+        .text {
+
+            span {
+                font-size: 14px;
+                line-height: 24px;
+            }
+             
+            .theme-btn {
+                width: inherit;
+                padding: 13px 22px;
+                background-color: $red;
+
+                @media screen and (max-width: 767px) { 
+                    padding: 10px 15px;
+                }
+
+                &:hover, &:focus {
+                    background-color: $black;
+                }
+
+                &__wrapper {
+                    gap: 10px 15px;
+                    
+                    .price {
+                        font-size: 28px;
+                        font-weight: 700;
+                        line-height: 38px;
+                    }
+                }
+            }
+
+            .services {
+
+                ul {
+                    gap: 20px;
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    li {
+                        
+                        a {
+                            color: #B5B6BA;
+                            font-size: 14px;
+                            line-height: 24px;
+
+                            i {
+                                margin-right: 5px;
+                            }
+
+                            &:hover, &:focus {
+                                color: $primary;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

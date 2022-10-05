@@ -1,0 +1,36 @@
+.highest-area {
+
+    &__content {
+
+        .description {
+
+            @media all and (min-width: 768px) {
+                max-width: 517px;
+            }
+
+            p {
+
+                + p {
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+
+    &__list {
+
+        ul {
+            gap: 10px;
+            display: flex;
+            flex-direction: column;
+
+            li {
+                font-weight: 700;
+
+                i {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
