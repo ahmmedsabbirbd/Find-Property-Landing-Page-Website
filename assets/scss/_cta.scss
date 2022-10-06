@@ -49,6 +49,7 @@
                     font-weight: 500;
                     line-height: 26px;
                     padding: 15px 25px;
+                    @include border-radius(0);
 
                     i {
                         margin: 0;

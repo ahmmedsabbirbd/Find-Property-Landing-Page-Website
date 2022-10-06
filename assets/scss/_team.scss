@@ -1,0 +1,93 @@
+.team-area {
+    z-index: 1;
+    position: relative;
+
+    &:after {
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: -1;
+        content: "";
+        height: 150px;
+        position: absolute;
+        background-color: #F7FBFE;
+    }
+
+    .minus {
+        margin-bottom: -30px;
+    }
+
+    &__item {
+        overflow: hidden;
+        position: relative;
+        background-color: $white;
+        border: 1px solid #E9F3F5;
+        border-radius: 500px 500px 10px 10px;
+        @include transition(border-radius 0.8s);
+        
+        .media {
+            
+            .img-wrppaer {
+                width: 196px;
+                height: 196px;
+                max-width: 100%;
+                overflow: hidden;
+                @include border-radius(500px);
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                }
+            }
+
+            i {
+                top: 35%;
+                z-index: 1;
+                right: 45px;
+                position: absolute;
+
+                @media screen  and (max-width: 1199px) { 
+                    right: 35px;
+                }
+
+                @media screen  and (max-width: 991px) { 
+                    right: 30px;
+                }
+            }
+        }
+
+        .text {
+
+            span {
+                font-size: 14px;
+                color: #75767B;
+                line-height: 24px;
+            }
+
+            a {
+                text-decoration: none;
+
+                &.phone {
+                    color: $black;
+
+                    &:hover, &:focus {
+                        color: $primary
+                    }
+                }
+
+                &.gmail {
+                    color: $primary;
+
+                    &:hover, &:focus {
+                       color: $black
+                    }
+                }
+            }
+        }
+
+        &:hover, &:focus {
+            border-radius: 10px;
+        }
+    }
+}

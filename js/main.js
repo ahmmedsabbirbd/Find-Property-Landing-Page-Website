@@ -126,6 +126,39 @@
 			event.preventDefault();
 		}); 
 
+		/*** categories-slider Slider */
+    	var $categories_slider;
+
+		$categories_slider = $('.categories-slider');
+
+		$categories_slider.slick({
+			autoplay: true,
+			speed: 300, 
+			dots: false,
+			arrows: true,
+			infinite: true,
+			slidesToShow: 3,
+			initialSlide: 1, 
+			slidesToScroll: 1,
+			appendArrows: $('.slider-controls .slider-arrows'),
+			prevArrow: '<div class="categories-slider__arrow categories-slider__arrow_left"><i class="fa-solid fa-arrow-left-long"></i></div>',
+        	nextArrow: '<div class="categories-slider__arrow categories-slider__arrow_right"><i class="fa-solid fa-arrow-right-long"></i></div>', 
+			responsive: [
+				{
+					breakpoint: 995,
+					settings: {
+						slidesToShow: 2
+					}
+				},
+				{
+					breakpoint: 580,
+					settings: {
+						slidesToShow: 1
+					}
+				}
+			]
+		})
+
         /** counter **/
         $('.counter').counterUp({
             delay: 10,
