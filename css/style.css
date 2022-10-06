@@ -884,6 +884,7 @@ select, textarea {
           .sell-area__form-wrapper .form-group label {
             margin-bottom: 5px; } }
       .sell-area__form-wrapper .form-group select {
+        cursor: pointer;
         display: inherit;
         -moz-appearance: none;
         -webkit-appearance: none;

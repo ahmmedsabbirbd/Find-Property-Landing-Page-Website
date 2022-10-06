@@ -1,0 +1,125 @@
+/*** testimonial-area  **/
+.testimonial-area {
+
+    &__slider {
+        max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+        position: relative;
+
+        .testimonial__arrow {
+            width: 50px;
+            height: 50px;
+            bottom: 0;
+            z-index: 1;
+            color: $white;
+            font-size: 18px;
+            cursor: pointer;
+            line-height: 50px;
+            text-align: center;
+            position: absolute;
+            background: $primary;
+            border-radius: 500px;
+            left: calc(50% - -8px);
+            border: 1px solid $primary;
+            @include transition(all .3s ease);
+            
+            @media all and (max-width: 767px) {
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                font-size: 16px;
+            }
+            
+            @media screen  and (max-width: 575px) { 
+                left: calc(50% - 20px);
+            }
+            
+            &:hover {
+                color: $black;
+                background: $white; 
+                border-color: $black;
+            }
+        
+            &.testimonial__arrow_left {
+                color: $black;
+                background: $white;
+                border-color: $black; 
+                left: calc(50% - 56px);
+
+                @media screen  and (max-width: 575px) { 
+                    left: calc(50% - 70px);
+                }
+                
+                &:hover {
+                    background: $primary !important;
+                    color: $white !important;
+                    border-color: $primary !important; 
+                }
+            }
+        } 
+    }
+
+	.slick-list {
+        
+		.slick-track {
+			height: 100%; 
+
+			.slick-slide {
+				padding-left: 12.5px;
+				padding-right: 12.5px; 
+				float: left !important;
+			}
+		}
+	}
+
+	&__item { 
+        gap: 30px 60px;
+
+		@media screen  and (max-width: 767px) { 
+			padding: 30px 20px;
+		}
+ 
+		&-media { 
+			overflow: hidden;
+            max-width: 185px;
+		}
+
+		&-text {
+            max-width: 330px;
+
+            @media screen  and (max-width: 575px) { 
+                max-width: 100%;
+            }
+
+            .title {
+                color: $primary;
+            }
+
+            .description {
+
+                p {
+                    font-size: 16px;
+                    color: #556273;
+                    line-height: 25px;
+                }
+            }
+    
+            .meta { 
+    
+                .name {
+                    font-size: 19px;
+                    line-height: 28px;
+                }
+    
+                .position {
+                    color: #595959;
+                    font-weight: 400;
+                    font-style: normal;
+                    line-height: 15px;
+                    font-size: 10.2928px;
+                }
+            }
+        }
+	}
+}
