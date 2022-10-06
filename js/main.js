@@ -43,7 +43,7 @@
 
 		/*** Scroll Nav */
 		var link = $('.main-menu ul li a');
- 
+		
 		link.on('click', function(e) {
 			var target = $($(this).attr('href'));
 			$('html, body').animate({
@@ -52,11 +52,9 @@
 			$(this).parent().addClass('active');
 			e.preventDefault();
 		});
- 
 		$(window).on('scroll', function(){
 			scrNav();
 		});
-
 		function scrNav() {
 			var sTop = $(window).scrollTop();
 			$('section').each(function() {
@@ -87,7 +85,7 @@
         /*** AOS */
 		AOS.init({
 			once: true,
-			offset: 0,
+			offset: 10,
 			duration: 900,
 		});
 
@@ -106,6 +104,7 @@
 			},
 			closeMarkup: '<button title="Close (Esc)" type="button" class="mfp-close"></button>',
 		});
+
     	/*** slick slider  */
 		$('.client-slider').slick();
 
@@ -113,12 +112,10 @@
 		var grid = $('.grid').isotope({
 			itemSelector: '.grid-item',
 		})
-
 		$('.filter-button-group').on('click', 'button', function () {
 			var filterValue = $(this).attr('data-filter');
 			grid.isotope({ filter: filterValue });
 		});
-
 		//for portfolio menu active class
 		$('.filter-button-group button').on('click', function (event) {
 			$(this).siblings('.active').removeClass('active');
@@ -128,9 +125,7 @@
 
 		/*** categories-slider Slider */
     	var $categories_slider;
-
 		$categories_slider = $('.categories-slider');
-
 		$categories_slider.slick({
 			autoplay: true,
 			speed: 300, 
@@ -158,12 +153,24 @@
 				}
 			]
 		})
+ 
+		/*** testimonial-active */
+        var testimonials__slider;
+        testimonials__slider = $('.testimonial-area__slider');
 
-        /** counter **/
-        $('.counter').counterUp({
-            delay: 10,
-            time: 1000
-        });
+        testimonials__slider.slick({
+            dots: false, 
+            speed: 300,
+            arrows: true,
+            autoplay: false,
+            slidesToShow: 1,
+            infinite: true,
+            slidesToScroll: 1,
+            autoplaySpeed: 500,
+            dotsClass: "slick-dots list-inline",
+            prevArrow: '<div class="testimonial__arrow testimonial__arrow_left"><i class="fa-solid fa-arrow-left-long"></i></div>',
+        	nextArrow: '<div class="testimonial__arrow testimonial__arrow_right"><i class="fa-solid fa-arrow-right-long"></i></div>', 
+        }); 
 
 	});
 
